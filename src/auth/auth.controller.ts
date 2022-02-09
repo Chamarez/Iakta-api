@@ -57,4 +57,14 @@ export class AuthController {
   ): Promise<void> {
     return this.authService.changePassword(changePasswordDto, user);
   }
+
+
+  @Get('/list-users')
+  @UseGuards(AuthGuard())
+  listUsers(
+    @GetUser() user: User,
+  ): Promise<User[]> {
+    return this.authService.listUsers();
+  }
+
 }

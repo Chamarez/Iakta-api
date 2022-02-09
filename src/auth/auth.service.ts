@@ -94,4 +94,16 @@ export class AuthService {
       throw new BadRequestException('Old password does not match');
     }
   }
+
+
+
+
+  async listUsers(){
+    const userList = await this.usersRepository.find({   select: ["id","name", "email"],})
+    return userList;
+
+  }
+
+
+
 }
