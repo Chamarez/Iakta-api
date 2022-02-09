@@ -10,7 +10,7 @@ export class Messages {
   userId: string;
 
   @Column()
-  receiverId: string;
+  text: string;
 
   @CreateDateColumn()
   createdAt: Date;

@@ -24,7 +24,7 @@ import { MessagesModule } from './messages/messages.module';
         autoLoadEntities: true,
       }),
       inject: [ConfigService],
-    }), AuthModule, UsersModule, SubscriptionModule,],
+    }), AuthModule, UsersModule, SubscriptionModule, MessagesModule],
     controllers: [],
     providers: [],
   })
