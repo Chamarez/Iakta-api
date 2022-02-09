@@ -3,6 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
+import { SubscriptionModule } from './subscription/subscription.module';
+import { MessagesModule } from './messages/messages.module';
 
 
 @Module({
@@ -22,7 +24,7 @@ import { UsersModule } from './users/users.module';
         autoLoadEntities: true,
       }),
       inject: [ConfigService],
-    }), AuthModule, UsersModule,],
+    }), AuthModule, UsersModule, SubscriptionModule,],
     controllers: [],
     providers: [],
   })

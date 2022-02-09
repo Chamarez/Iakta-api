@@ -99,7 +99,10 @@ export class AuthService {
 
 
   async listUsers(){
-    const userList = await this.usersRepository.find({   select: ["id","name", "email"],})
+    const userList = await this.usersRepository.find({select: ["id","name", "email"],})
+    if(!userList){
+      throw new UnprocessableEntityException('This action can not be done');
+    }
     return userList;
 
   }
